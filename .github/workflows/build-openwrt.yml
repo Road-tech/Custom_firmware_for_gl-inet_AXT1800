@@ -17,8 +17,8 @@ on:
 env:
   REPO_URL: https://github.com/gl-inet/gl-infra-builder.git
   REPO_BRANCH: main
-  CONFIG_FILE: lede.config
-  MWAN3CONFIG: mwan3.config
+  GIT_USER: Road-tech
+  GIT_EMAIL: 496814664@qq.com
   DIY_P1_SH: add-feeds.sh
   DIY_P2_SH: diy-part2.sh
   UPLOAD_BIN_DIR: true
@@ -47,6 +47,8 @@ jobs:
         sudo timedatectl set-timezone "$TZ"
         sudo mkdir -p /workdir
         sudo chown $USER:$GROUPS /workdir
+        git config --global user.name $GIT_USER
+        git config --global user.email $GIT_EMAIL
 
     - name: Clone source code
       working-directory: /workdir
@@ -72,8 +74,6 @@ jobs:
 
     - name: Load custom configuration
       run: |
-        [ -e files ] && mv files openwrt/files
-        [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
         chmod +x $DIY_P2_SH
         cd openwrt
         $GITHUB_WORKSPACE/$DIY_P2_SH
