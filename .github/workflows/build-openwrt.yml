@@ -12,6 +12,7 @@ name: Build axt1800
 
 on:
   repository_dispatch:
+  workflow_dispatch:
 
 env:
   REPO_URL: https://github.com/gl-inet/gl-infra-builder.git
