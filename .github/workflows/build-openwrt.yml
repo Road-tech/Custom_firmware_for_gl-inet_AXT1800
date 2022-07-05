@@ -69,7 +69,7 @@ jobs:
     - name: Load custom configuration
       run: |
         chmod +x $DIY_P2_SH
-        cd openwrt
+        cd gl-infra-builder
         $GITHUB_WORKSPACE/$DIY_P2_SH
 
     - name: Download package
