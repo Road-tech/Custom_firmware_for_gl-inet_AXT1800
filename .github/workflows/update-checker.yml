@@ -12,8 +12,8 @@
 name: Update Checker
 
 env:
-  REPO_URL: https://github.com/coolsnowwolf/openwrt
-  REPO_BRANCH: lede-17.01
+  REPO_URL: https://github.com/gl-inet/gl-infra-builder.git
+  REPO_BRANCH: main
 
 on:
   workflow_dispatch:
