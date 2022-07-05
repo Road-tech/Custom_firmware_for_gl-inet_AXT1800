@@ -65,11 +65,10 @@ jobs:
         cd gl-infra-builder
         $GITHUB_WORKSPACE/$DIY_P1_SH
 
-
     - name: Load custom configuration
       run: |
         chmod +x $DIY_P2_SH
-        cd gl-infra-builder
+        cd gl-infra-builder/wlan-ap/openwrt
         $GITHUB_WORKSPACE/$DIY_P2_SH
 
     - name: Download package
