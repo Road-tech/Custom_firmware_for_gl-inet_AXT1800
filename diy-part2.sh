@@ -35,3 +35,11 @@ sed -i 's/OpenWrt/MagicBox/g' package/base-files/files/bin/config_generate
 # 设定root密码为password
 sed -i '1d' package/base-files/files/etc/shadow
 sed -i '1i root:$1$H\/ab6bvd$yWkIzUrKuLPTNHY9akBDC0:18988:0:99999:7:::'  package/base-files/files/etc/shadow
+
+# 修改固件名称
+sed -i '/DISTRIB_REVISION/d' package/base-files/files/etc/openwrt_release
+echo "DISTRIB_REVISION='GL-iNet Inc'" >> package/base-files/files/etc/openwrt_release
+sed -i '/DISTRIB_DESCRIPTION/d' package/base-files/files/etc/openwrt_release
+echo "DISTRIB_DESCRIPTION='OpenWrt R22.7.1 '" >> package/base-files/files/etc/openwrt_release
+sed -i 's/OpenWrt/AXT1800/' package/base-files/files/bin/config_generate
+
