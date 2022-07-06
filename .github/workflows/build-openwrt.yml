@@ -66,9 +66,9 @@ jobs:
     - name: Load custom configuration
       run: |
         [ -e $CONFIG_FILE ] && mv $CONFIG_FILE gl-infra-builder/profiles/Road-axt1800.yml
+        chmod +x $DIY_P2_SH
         cd gl-infra-builder
         python3 setup.py -c config-wlan-ap-5.4.yml
-        chmod +x $DIY_P2_SH
         cd wlan-ap/openwrt
         $GITHUB_WORKSPACE/$DIY_P2_SH
 
