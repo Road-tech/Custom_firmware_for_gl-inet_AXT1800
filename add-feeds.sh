@@ -20,10 +20,9 @@
 git clone https://github.com/vernesong/OpenClash.git $GITHUB_WORKSPACE/OpenClash
 cp -r $GITHUB_WORKSPACE/OpenClash/luci-app-openclash $GITHUB_WORKSPACE/gl-infra-builder/feeds/glinet/luci-app-openclash
 
-cd gl-infra-builder
-svn co https://github.com/Lienol/openwrt-package/trunk/luci-app-ramfree feeds/glinet/luci-app-ramfree
-svn co https://github.com/kiddin9/openwrt-packages/trunk/luci-app-zerotier feeds/glinet/luci-app-zerotier
-svn co https://github.com/coolsnowwolf/packages/trunk/net/zerotier feeds/glinet/zerotier
+svn co https://github.com/Lienol/openwrt-package/trunk/luci-app-ramfree $GITHUB_WORKSPACE/gl-infra-builder/feeds/glinet/luci-app-ramfree
+svn co https://github.com/kiddin9/openwrt-packages/trunk/luci-app-zerotier $GITHUB_WORKSPACE/gl-infra-builder/feeds/glinet/luci-app-zerotier
+svn co https://github.com/coolsnowwolf/packages/trunk/net/zerotier $GITHUB_WORKSPACE/gl-infra-builder/feeds/glinet/zerotier
 
 # pushd wlan-ap/openwrt
  
