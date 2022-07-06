@@ -17,6 +17,7 @@ on:
 env:
   REPO_URL: https://github.com/gl-inet/gl-infra-builder.git
   REPO_BRANCH: main
+  CONFIG_FILE: Road-axt1800.yml
   GIT_USER: Road-tech
   GIT_EMAIL: 496814664@qq.com
   DIY_P1_SH: add-feeds.sh
@@ -56,26 +57,26 @@ jobs:
         df -hT $PWD
         git clone $REPO_URL -b $REPO_BRANCH gl-infra-builder
         ln -sf /workdir/gl-infra-builder $GITHUB_WORKSPACE/gl-infra-builder
-        cd gl-infra-builder
-        python3 setup.py -c config-wlan-ap.yml
 
     - name: Load custom feeds
       run: |
         chmod +x $DIY_P1_SH
-        cd gl-infra-builder
         $GITHUB_WORKSPACE/$DIY_P1_SH
 
     - name: Load custom configuration
       run: |
+        [ -e $CONFIG_FILE ] && mv $CONFIG_FILE gl-infra-builder/profiles/Road-axt1800.yml
+        cd gl-infra-builder
+        python3 setup.py -c config-wlan-ap-5.4.yml
         chmod +x $DIY_P2_SH
-        cd gl-infra-builder/wlan-ap/openwrt
+        cd wlan-ap/openwrt
         $GITHUB_WORKSPACE/$DIY_P2_SH
 
     - name: Download package
       id: package
       run: |
         cd gl-infra-builder/wlan-ap/openwrt
-        ./scripts/gen_config.py target_wlan_ap-gl-axt1800 luci
+        ./scripts/gen_config.py Road-axt1800 glinet_depends
 
     - name: Compile the firmware
       id: compile
