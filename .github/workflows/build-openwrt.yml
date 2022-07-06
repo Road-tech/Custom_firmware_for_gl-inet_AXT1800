@@ -81,7 +81,7 @@ jobs:
     - name: 添加glinet私有软件包（官方UI）
       run: |
         cd gl-infra-builder
-        git clone git@github.com:gl-inet/glinet4.x.git glinetUI
+        git clone https://github.com/gl-inet/glinet4.x.git glinetUI
 
     - name: Compile the firmware
       id: compile
