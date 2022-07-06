@@ -72,7 +72,7 @@ jobs:
         cd wlan-ap/openwrt
         $GITHUB_WORKSPACE/$DIY_P2_SH
 
-    - name: Download package
+    - name: Download feeds and Generate config file
       id: package
       run: |
         cd gl-infra-builder/wlan-ap/openwrt
