@@ -79,6 +79,7 @@ packages:
   - kmod-usb-net-ipheth
   - kmod-usb-net-rndis
   - kmod-usb-serial-ch341
+  - usb-modeswitch
   - iptables 
   - coreutils 
   - coreutils-nohup 
