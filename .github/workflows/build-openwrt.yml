@@ -65,7 +65,7 @@ jobs:
 
     - name: Load custom configuration
       run: |
-        [ -e $CONFIG_FILE ] && mv $CONFIG_FILE gl-infra-builder/profiles/Road-axt1800.yml
+        [ -e $CONFIG_FILE ] && mv $CONFIG_FILE gl-infra-builder/profiles/Road.yml
         chmod +x $DIY_P2_SH
         cd gl-infra-builder
         python3 setup.py -c config-wlan-ap-5.4.yml
@@ -76,7 +76,7 @@ jobs:
       id: package
       run: |
         cd gl-infra-builder/wlan-ap/openwrt
-        ./scripts/gen_config.py Road-axt1800 glinet_depends
+        ./scripts/gen_config.py Road glinet_depends
         
     - name: 添加glinet私有软件包（官方UI）
       run: |
