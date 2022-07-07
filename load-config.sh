@@ -18,8 +18,10 @@ sed -i '$a uci set network.wwan=interface' package/base-files/files/bin/config_g
 sed -i '$a uci set network.wwan.ifname=eth2' package/base-files/files/bin/config_generate
 sed -i '$a uci set network.wwan.proto=dhcp' package/base-files/files/bin/config_generate
 sed -i '$a uci set network.wwan.up=1' package/base-files/files/bin/config_generate
-echo "uci set glfan.@globals[0].temperature='30'" >> package/base-files/files/bin/config_generate
 sed -i "19a \ \ \ \ \ \ \ \ list   network          'wwan' " package/network/config/firewall/files/firewall.config
+
+# 设置风扇30度起转
+echo "uci set glfan.@globals[0].temperature='30'" >> package/base-files/files/bin/config_generate
 
 # 设定内网默认ip为192.168.8.1
 sed -i 's/192.168.1.1/192.168.8.1/g' package/base-files/files/bin/config_generate
@@ -27,9 +29,6 @@ sed -i 's/192.168.1.1/192.168.8.1/g' package/base-files/files/bin/config_generat
 # 设定主题luci-theme-argon
 echo "uci set luci.main.mediaurlbase='/luci-static/argon'" >> package/base-files/files/bin/config_generate
 sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/Makefile
-
-# 默认开启Wifi、设定Wi-Fi名为GL-AXT1800、区域设为美国
-mv $WIFI_CONFIG_FILE $GITHUB_WORKSPACE/gl-infra-builder/wlan-ap/feeds/wifi-ax/mac80211/files/lib/wifi/mac80211.sh
 
 # 修改主机名
 echo "uci set system.cfg01e48a.hostname='GL-AXT1800'" >> package/base-files/files/bin/config_generate
@@ -41,6 +40,9 @@ echo "DISTRIB_DESCRIPTION='OpenWrt R22.7.1 '" >> package/base-files/files/etc/op
 
 # 补充配置文件最后一行结束语
 sed -i '$a uci commit' package/base-files/files/bin/config_generate
+
+# 默认开启Wifi、设定Wi-Fi名为GL-AXT1800、区域设为美国
+mv $WIFI_CONFIG_FILE $GITHUB_WORKSPACE/gl-infra-builder/wlan-ap/feeds/wifi-ax/mac80211/files/lib/wifi/mac80211.sh
 
 # 设定root密码为password
 sed -i '1d' package/base-files/files/etc/shadow
