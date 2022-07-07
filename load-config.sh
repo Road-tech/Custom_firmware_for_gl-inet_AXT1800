@@ -48,7 +48,7 @@ echo "uci set wireless.radio0.channel='auto'" >> package/base-files/files/bin/co
 echo "uci set wireless.radio0.txpower='30'" >> package/base-files/files/bin/config_generate
 
 # 修改主机名
-echo "uci set system.cfg01e48a.hostname='axt1800'" >> package/base-files/files/bin/config_generate
+echo "uci set system.cfg01e48a.hostname='GL-AXT1800'" >> package/base-files/files/bin/config_generate
 sed -i 's/OpenWrt/AXT1800/' package/base-files/files/bin/config_generate
 sed -i '/DISTRIB_REVISION/d' package/base-files/files/etc/openwrt_release
 echo "DISTRIB_REVISION='GL.iNet AXT1800'" >> package/base-files/files/etc/openwrt_release
