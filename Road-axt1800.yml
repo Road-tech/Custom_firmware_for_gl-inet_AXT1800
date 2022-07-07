@@ -1,21 +1,11 @@
 ---
 profile: glinet_axt1800
-target: ipq807x
-subtarget: ipq60xx
 description: Build image for the GL.iNET AXT1800
 image: bin/targets/ipq807x/ipq60xx/openwrt-ipq807x-glinet_axt1800-squashfs-sysupgrade.tar
 feeds:
-  - name: ipq807x
-    path: ../../feeds/ipq807x
-  - name: gl_feeds_common
-    uri: https://github.com/gl-inet/gl-feeds.git
-    revision: e80e82c55ae2c43e70efbd0b169690e31c5ac39c
   - name: gl_feeds
     uri: https://github.com/gl-inet/gl-feeds.git
     revision: c272de41d69a73a44ed9ddb6105a3b869a7bcf41
-  - name: luci
-    uri: https://github.com/openwrt/luci.git
-    revision: 1c3b32dc1bec15e3076a447762b1c4f94eb75fb7
   - name: glinet
     path: ../feeds_dir/glinet
   - name: helloworld
@@ -26,13 +16,9 @@ feeds:
   - name: small
     uri: https://github.com/kenzok8/small.git
 
-include:
-  - wifi-ax
-
 packages:
   - kmod-hwmon-pwmfan
   - wpad-openssl
-  - wget-ssl
   - luci-app-adguardhome
   - luci-app-ssr-plus
   - luci-app-ddns
@@ -107,7 +93,6 @@ diffconfig: |
   CONFIG_LUCI_LANG_zh_Hans=y
   CONFIG_BUSYBOX_CUSTOM=y
   CONFIG_BUSYBOX_CONFIG_FEATURE_FLOAT_SLEEP=y
-  CONFIG_KERNEL_IPQ_MEM_PROFILE=0
   CONFIG_PACKAGE_luci-theme-bootstrap=n
   CONFIG_ARIA2_BITTORRENT=y
   CONFIG_ARIA2_NOXML=y
