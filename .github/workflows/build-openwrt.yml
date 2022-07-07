@@ -68,7 +68,6 @@ jobs:
         [ -e $CONFIG_FILE ] && mv $CONFIG_FILE gl-infra-builder/profiles/Road.yml
         cd gl-infra-builder
         python3 setup.py -c config-wlan-ap-5.4.yml
-        cd wlan-ap/openwrt
 
     - name: Download feeds and Generate config file
       id: package
