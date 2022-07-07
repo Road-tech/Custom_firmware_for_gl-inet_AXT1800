@@ -1,7 +1,8 @@
 ---
 profile: glinet_axt1800
-description: Build image for the GL.iNET AXT1800
-image: bin/targets/ipq807x/ipq60xx/openwrt-ipq807x-glinet_axt1800-squashfs-sysupgrade.tar
+description: custom profile for Road
+include:
+  - target_wlan_ap-gl-axt1800-5-4
 feeds:
   - name: gl_feeds
     uri: https://github.com/gl-inet/gl-feeds.git
