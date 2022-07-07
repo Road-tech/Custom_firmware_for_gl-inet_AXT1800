@@ -5,6 +5,8 @@ include:
 feeds:
   - name: glinet
     path: ../feeds_dir/glinet
+  - name: luci
+    uri: https://github.com/openwrt/luci.git
   - name: helloworld
     uri: https://github.com/fw876/helloworld.git
   - name: kiddin9
