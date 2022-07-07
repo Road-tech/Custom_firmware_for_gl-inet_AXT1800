@@ -343,7 +343,6 @@ diffconfig: |
   CONFIG_PACKAGE_luci-app-openclash=y
   CONFIG_PACKAGE_luci-app-opkg=y
   CONFIG_PACKAGE_luci-app-passwall=y
-  CONFIG_PACKAGE_luci-app-samba4=y
   CONFIG_PACKAGE_luci-app-tinyproxy=y
   CONFIG_PACKAGE_luci-app-ttyd=y
   CONFIG_PACKAGE_luci-app-uhttpd=y
@@ -365,7 +364,6 @@ diffconfig: |
   CONFIG_PACKAGE_luci-i18n-mwan3-zh-cn=y
   CONFIG_PACKAGE_luci-i18n-opkg-zh-cn=y
   CONFIG_PACKAGE_luci-i18n-passwall-zh-cn=y
-  CONFIG_PACKAGE_luci-i18n-samba4-zh-cn=y
   CONFIG_PACKAGE_luci-i18n-tinyproxy-zh-cn=y
   CONFIG_PACKAGE_luci-i18n-ttyd-zh-cn=y
   CONFIG_PACKAGE_luci-i18n-uhttpd-zh-cn=y
@@ -417,8 +415,6 @@ diffconfig: |
   CONFIG_PACKAGE_ruby-stringio=y
   CONFIG_PACKAGE_ruby-strscan=y
   CONFIG_PACKAGE_ruby-yaml=y
-  CONFIG_PACKAGE_samba4-libs=y
-  CONFIG_PACKAGE_samba4-server=y
   CONFIG_PACKAGE_shadowsocks-libev-config=y
   CONFIG_PACKAGE_shadowsocks-libev-ss-local=y
   CONFIG_PACKAGE_shadowsocks-libev-ss-redir=y
@@ -455,10 +451,6 @@ diffconfig: |
   CONFIG_PACKAGE_xray-core=y
   CONFIG_PACKAGE_zlib=y
   CONFIG_PCRE_JIT_ENABLED=y
-  CONFIG_SAMBA4_SERVER_AVAHI=y
-  CONFIG_SAMBA4_SERVER_NETBIOS=y
-  CONFIG_SAMBA4_SERVER_VFS=y
-  CONFIG_SAMBA4_SERVER_WSDD2=y
   CONFIG_SQLITE3_DYNAMIC_EXTENSIONS=y
   CONFIG_SQLITE3_FTS3=y
   CONFIG_SQLITE3_FTS4=y
