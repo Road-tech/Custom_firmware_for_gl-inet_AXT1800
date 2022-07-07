@@ -18,6 +18,7 @@ env:
   REPO_URL: https://github.com/gl-inet/gl-infra-builder.git
   REPO_BRANCH: main
   CONFIG_FILE: Road-axt1800.yml
+  WIFI_CONFIG_FILE: mac80211.sh
   GIT_USER: Road-tech
   GIT_EMAIL: 496814664@qq.com
   DIY_P1_SH: add-feeds.sh
@@ -77,6 +78,7 @@ jobs:
         chmod +x $DIY_P2_SH
         cd gl-infra-builder/wlan-ap/openwrt
         ./scripts/gen_config.py Road glinet_depends
+        [ -e $WIFI_CONFIG_FILE ] && mv $WIFI_CONFIG_FILE $GITHUB_WORKSPACE/gl-infra-builder/wlan-ap/feeds/wifi-ax/mac80211/files/lib/wifi/mac80211.sh
         $GITHUB_WORKSPACE/$DIY_P2_SH
         
     - name: 添加glinet私有软件包（官方UI）
