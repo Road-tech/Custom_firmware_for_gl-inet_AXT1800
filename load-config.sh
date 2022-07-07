@@ -28,24 +28,8 @@ sed -i 's/192.168.1.1/192.168.8.1/g' package/base-files/files/bin/config_generat
 echo "uci set luci.main.mediaurlbase='/luci-static/argon'" >> package/base-files/files/bin/config_generate
 sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/Makefile
 
-# 默认开启2.4G Wifi、设定Wi-Fi名为GL-AXT1800、区域设为美国、WiFi密码为password、带宽40Mhz、频道自动、功率30dB
-echo "uci set wireless.radio1.disabled=0" >> package/base-files/files/bin/config_generate
-echo "uci set wireless.default_radio1.ssid='GL-AXT1800'" >> package/base-files/files/bin/config_generate
-echo "uci set wireless.radio1.country='US'" >> package/base-files/files/bin/config_generate
-echo "uci set wireless.default_radio1.encryption='psk2'" >> package/base-files/files/bin/config_generate
-echo "uci set wireless.default_radio1.key='password'" >> package/base-files/files/bin/config_generate
-echo "uci set wireless.radio1.htmode='HE40'" >> package/base-files/files/bin/config_generate
-echo "uci set wireless.radio1.channel='auto'" >> package/base-files/files/bin/config_generate
-echo "uci set wireless.radio1.txpower='30'" >> package/base-files/files/bin/config_generate
-
-# 默认开启5G Wifi、设定Wi-Fi名为GL-AXT1800-5G、区域设为美国、WiFi密码为password、频道自动、功率30dB
-echo "uci set wireless.radio0.disabled=0" >> package/base-files/files/bin/config_generate
-echo "uci set wireless.default_radio0.ssid='GL-AXT1800-5G'" >> package/base-files/files/bin/config_generate
-echo "uci set wireless.radio0.country='US'" >> package/base-files/files/bin/config_generate
-echo "uci set wireless.default_radio0.encryption='psk2'" >> package/base-files/files/bin/config_generate
-echo "uci set wireless.default_radio0.key='password'" >> package/base-files/files/bin/config_generate
-echo "uci set wireless.radio0.channel='auto'" >> package/base-files/files/bin/config_generate
-echo "uci set wireless.radio0.txpower='30'" >> package/base-files/files/bin/config_generate
+# 默认开启Wifi、设定Wi-Fi名为GL-AXT1800、区域设为美国
+mv $WIFI_CONFIG_FILE $GITHUB_WORKSPACE/gl-infra-builder/wlan-ap/feeds/wifi-ax/mac80211/files/lib/wifi/mac80211.sh
 
 # 修改主机名
 echo "uci set system.cfg01e48a.hostname='GL-AXT1800'" >> package/base-files/files/bin/config_generate
