@@ -173,7 +173,7 @@ detect_mac80211() {
 		
 		wifiname=""
 		if [ ${devidx} -eq 0 ]; then
-			wifiname="-5g"
+			wifiname="-5G"
 		fi
 
 
