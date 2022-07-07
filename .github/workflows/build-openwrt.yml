@@ -21,7 +21,7 @@ env:
   GIT_USER: Road-tech
   GIT_EMAIL: 496814664@qq.com
   DIY_P1_SH: add-feeds.sh
-  DIY_P2_SH: diy-part2.sh
+  DIY_P2_SH: load-config.sh
   UPLOAD_BIN_DIR: true
   UPLOAD_FIRMWARE: true
   UPLOAD_RELEASE: true
