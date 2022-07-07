@@ -18,6 +18,12 @@ feeds:
     revision: 1c3b32dc1bec15e3076a447762b1c4f94eb75fb7
   - name: glinet
     path: ../feeds_dir/glinet
+   - name: glinet
+    path: ../feeds_dir/glinet
+  - name: kenzo
+    uri: https://github.com/kenzok8/openwrt-packages.git
+  - name: small
+    uri: https://github.com/kenzok8/small.git
 
 include:
   - wifi-ax
@@ -26,16 +32,20 @@ packages:
   - kmod-hwmon-pwmfan
   - wpad-openssl
   - wget-ssl
+  - luci-app-adguardhome
+  - luci-app-ssr-plus
   - luci-app-ddns
   - ddns-scripts
   - ddns-scripts-services
-  - gl-sdk4-adguardhome
+  - adguardhome
+  - ddns-scripts_aliyun
   - luci-app-uhttpd
   - dnsmasq-full
   - luci-app-commands
   - luci-app-mwan3
   - luci-app-wireguard
   - wireguard
+  - luci-app-eqos
   - wireguard-tools
   - luci
   - luci-base
