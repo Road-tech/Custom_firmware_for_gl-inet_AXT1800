@@ -3,9 +3,6 @@ description: custom profile for Road
 include:
   - target_wlan_ap-gl-axt1800-5-4
 feeds:
-  - name: gl_feeds
-    uri: https://github.com/gl-inet/gl-feeds.git
-    revision: c272de41d69a73a44ed9ddb6105a3b869a7bcf41
   - name: glinet
     path: ../feeds_dir/glinet
   - name: helloworld
