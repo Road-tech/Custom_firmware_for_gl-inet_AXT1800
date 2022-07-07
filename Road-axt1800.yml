@@ -17,7 +17,6 @@ feeds:
     uri: https://github.com/kenzok8/small.git
 
 packages:
-  - kmod-hwmon-pwmfan
   - wpad-openssl
   - luci-app-adguardhome
   - luci-app-ssr-plus
