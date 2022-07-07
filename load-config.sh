@@ -26,6 +26,7 @@ sed -i 's/192.168.1.1/192.168.8.1/g' package/base-files/files/bin/config_generat
 
 # 设定主题luci-theme-argon
 echo "uci set luci.main.mediaurlbase='/luci-static/argon'" >> package/base-files/files/bin/config_generate
+sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/Makefile
 
 # 默认开启2.4G Wifi、设定Wi-Fi名为GL-AXT1800、区域设为美国、WiFi密码为password、带宽40Mhz、频道自动、功率30dB
 echo "uci set wireless.radio1.disabled=0" >> package/base-files/files/bin/config_generate
