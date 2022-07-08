@@ -26,10 +26,11 @@ echo "uci set glfan.@globals[0].temperature='30'" >> package/base-files/files/bi
 # 设定内网默认ip为192.168.8.1
 sed -i 's/192.168.1.1/192.168.8.1/g' package/base-files/files/bin/config_generate
 
+echo step1
 # 设定主题luci-theme-argon
 echo "uci set luci.main.mediaurlbase='/luci-static/argon'" >> package/base-files/files/bin/config_generate
 sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/Makefile
-
+echo step2
 # 修改主机名
 echo "uci set system.cfg01e48a.hostname='GL-AXT1800'" >> package/base-files/files/bin/config_generate
 sed -i 's/OpenWrt/AXT1800/' package/base-files/files/bin/config_generate
