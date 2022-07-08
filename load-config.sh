@@ -26,11 +26,10 @@ echo "uci set glfan.@globals[0].temperature='30'" >> package/base-files/files/bi
 # 设定内网默认ip为192.168.8.1
 sed -i 's/192.168.1.1/192.168.8.1/g' package/base-files/files/bin/config_generate
 
-echo step1
 # 设定主题luci-theme-argon
 echo "uci set luci.main.mediaurlbase='/luci-static/argon'" >> package/base-files/files/bin/config_generate
 sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/Makefile
-echo step2
+
 # 修改主机名
 echo "uci set system.cfg01e48a.hostname='GL-AXT1800'" >> package/base-files/files/bin/config_generate
 sed -i 's/OpenWrt/AXT1800/' package/base-files/files/bin/config_generate
@@ -38,11 +37,13 @@ sed -i '/DISTRIB_REVISION/d' package/base-files/files/etc/openwrt_release
 echo "DISTRIB_REVISION='GL.iNet AXT1800'" >> package/base-files/files/etc/openwrt_release
 sed -i '/DISTRIB_DESCRIPTION/d' package/base-files/files/etc/openwrt_release
 echo "DISTRIB_DESCRIPTION='OpenWrt R22.7.1 '" >> package/base-files/files/etc/openwrt_release
-echo step3
+
 # 补充配置文件最后一行结束语
 sed -i '$a uci commit' package/base-files/files/bin/config_generate
-echo step4
+
+# 默认开启Wifi、设定Wi-Fi名为GL-AXT1800、区域设为美国
+mv -f $WIFI_CONFIG_FILE $GITHUB_WORKSPACE/gl-infra-builder/wlan-ap/feeds/wifi-ax/mac80211/files/lib/wifi/mac80211.sh
+
 # 设定root密码为password
 sed -i '1d' package/base-files/files/etc/shadow
 sed -i '1i root:$1$H\/ab6bvd$yWkIzUrKuLPTNHY9akBDC0:18988:0:99999:7:::'  package/base-files/files/etc/shadow
-echo step5
