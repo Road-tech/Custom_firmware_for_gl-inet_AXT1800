@@ -38,10 +38,11 @@ sed -i '/DISTRIB_REVISION/d' package/base-files/files/etc/openwrt_release
 echo "DISTRIB_REVISION='GL.iNet AXT1800'" >> package/base-files/files/etc/openwrt_release
 sed -i '/DISTRIB_DESCRIPTION/d' package/base-files/files/etc/openwrt_release
 echo "DISTRIB_DESCRIPTION='OpenWrt R22.7.1 '" >> package/base-files/files/etc/openwrt_release
-
+echo step3
 # 补充配置文件最后一行结束语
 sed -i '$a uci commit' package/base-files/files/bin/config_generate
-
+echo step4
 # 设定root密码为password
 sed -i '1d' package/base-files/files/etc/shadow
 sed -i '1i root:$1$H\/ab6bvd$yWkIzUrKuLPTNHY9akBDC0:18988:0:99999:7:::'  package/base-files/files/etc/shadow
+echo step5
