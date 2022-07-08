@@ -1,9 +1,5 @@
 ---
-profile: glinet_axt1800
-target: ipq807x
-subtarget: ipq60xx
 description: Build image for the GL.iNET AXT1800
-image: bin/targets/ipq807x/ipq60xx/openwrt-ipq807x-glinet_axt1800-squashfs-sysupgrade.tar
 feeds:
   - name: ipq807x
     path: ../../feeds/ipq807x
@@ -16,8 +12,6 @@ feeds:
   - name: luci
     uri: https://github.com/openwrt/luci.git
     revision: 1c3b32dc1bec15e3076a447762b1c4f94eb75fb7
-  - name: glinet
-    path: ../feeds_dir/glinet
    - name: glinet
     path: ../feeds_dir/glinet
   - name: kenzo
