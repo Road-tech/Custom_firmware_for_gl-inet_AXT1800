@@ -1,18 +1,7 @@
 ---
-profile: glinet_axt1800
-target: ipq807x
-subtarget: ipq60xx
-description: Build image for the GL.iNET AXT1800
-image: bin/targets/ipq807x/ipq60xx/openwrt-ipq807x-glinet_axt1800-squashfs-sysupgrade.tar
+description: add luci application
+
 feeds:
-  - name: ipq807x
-    path: ../../feeds/ipq807x
-  - name: gl_feeds_common
-    uri: https://github.com/gl-inet/gl-feeds.git
-    revision: 3b171fae6bf8e57fef60b77e166eb95473658bd5
-  - name: luci
-    uri: https://github.com/openwrt/luci.git
-    revision: 1c3b32dc1bec15e3076a447762b1c4f94eb75fb7
   - name: glinet
     path: ../feeds_dir/glinet
   - name: kenzo
@@ -20,77 +9,38 @@ feeds:
   - name: small
     uri: https://github.com/kenzok8/small.git
 
-include:
-  - wifi-ax
-
 packages:
-  - kmod-hwmon-pwmfan
   - wpad-openssl
-  - wget-ssl
   - luci-app-adguardhome
   - luci-app-ssr-plus
   - luci-app-ddns
-  - ddns-scripts
-  - ddns-scripts-services
   - adguardhome
   - ddns-scripts_aliyun
   - luci-app-uhttpd
   - dnsmasq-full
   - luci-app-commands
   - luci-app-mwan3
-  - luci-app-wireguard
   - wireguard
   - luci-app-eqos
   - wireguard-tools
   - luci
-  - luci-base
-  - luci-mod-rpc
-  - kmod-usb-storage
-  - kmod-usb-uhci
-  - comgt
-  - chat
-  - uqmi
-  - blkid
-  - ntfs-3g
-  - ntfs-3g-utils
-  - dosfstools
-  - e2fsprogs
-  - usbmuxd
-  - kmod-usb2
   - kmod-usb3
-  - kmod-usb-ohci
-  - kmod-usb-acm
-  - kmod-usb-net-huawei-cdc-ncm
-  - kmod-usb-serial
-  - kmod-usb-serial-option
-  - kmod-usb-serial-wwan
-  - kmod-usb-net-cdc-ether
-  - kmod-usb-net-qmi-wwan
-  - kmod-fs-ext4
-  - kmod-fs-ntfs
-  - kmod-fs-vfat
-  - kmod-fs-exfat
-  - kmod-usb-net-ipheth
-  - kmod-usb-net-rndis
-  - kmod-usb-serial-ch341
-  - usb-modeswitch
-  - iptables 
-  - coreutils 
-  - coreutils-nohup 
-  - bash 
-  - curl 
-  - ca-certificates 
-  - ipset 
-  - ip-full
-  - iptables-mod-tproxy 
-  - iptables-mod-extra 
-  - libcap 
-  - libcap-bin 
-  - ruby 
-  - ruby-yaml 
-  - kmod-tun
   - luci-theme-argon
   - luci-app-openclash
+  - luci-app-passwall
+  - luci-app-adguardhome
+  - luci-app-advanced
+  - luci-app-aliddns
+  - luci-app-aria2
+  - luci-app-ddns
+  - luci-app-frpc
+  - luci-app-frps
+  - luci-app-tinyproxy
+  - luci-app-ttyd
+  - luci-app-uhttpd
+  - luci-app-watchcat
+  - luci-app-wireguard
+  - luci-app-wol
 
 diffconfig: |
   CONFIG_PACKAGE_wpad-basic=n
@@ -101,5 +51,5 @@ diffconfig: |
   CONFIG_LUCI_LANG_zh_Hans=y
   CONFIG_BUSYBOX_CUSTOM=y
   CONFIG_BUSYBOX_CONFIG_FEATURE_FLOAT_SLEEP=y
-  CONFIG_KERNEL_IPQ_MEM_PROFILE=0
   CONFIG_PACKAGE_luci-theme-bootstrap=n
+  CONFIG_PACKAGE_luci-i18n-passwall-zh-cn=y
