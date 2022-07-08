@@ -7,10 +7,6 @@ Gl-inet AXT1800 固件
 
 此固件基于[gl-inet](https://github.com/gl-inet)的官方开源仓库[gl-infra-builder](https://github.com/gl-inet/gl-infra-builder)，属openwrt 21.02，5.4内核。
 
-默认集成LTE所需的kmod-usb-net、kmod-usb-net-rndis、usb-modeswitch驱动，默认添加WWAN网卡和防火墙，默认开启WIFI，开箱即用，无需手动配置。
-
-默认集成mwan并配置好，会自动判断网络接口的状态并按优先级去选择，优先级为 有线 > 4G卡， 即同时只插网线或者4G卡时，会自动选择网线或者4G卡。同时插入网线和4G卡，会优先选择有线网络。当有线网络出现问题时，会自动切换到4G卡。当有线网络恢复，切换回有线网络，以此类推。
-
 如果需要定制，可以自行fork修改，都有详细备注。
 
 ## Openwrt配置相关
