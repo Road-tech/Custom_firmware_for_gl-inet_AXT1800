@@ -21,6 +21,7 @@ git clone https://github.com/vernesong/OpenClash.git $GITHUB_WORKSPACE/OpenClash
 cp -r $GITHUB_WORKSPACE/OpenClash/luci-app-openclash $GITHUB_WORKSPACE/gl-infra-builder/feeds/glinet/luci-app-openclash
 
 git clone https://github.com/jerrykuku/luci-theme-argon.git $GITHUB_WORKSPACE/gl-infra-builder/feeds/glinet/luci-theme-argon
+sed -i '/luci-theme-bootstrap/d' glinet_depends.yml $GITHUB_WORKSPACE/gl-infra-builder/profiles/glinet_depends.yml
 
 # pushd wlan-ap/openwrt
  
