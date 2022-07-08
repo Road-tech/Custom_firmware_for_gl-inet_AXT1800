@@ -41,9 +41,6 @@ echo "DISTRIB_DESCRIPTION='OpenWrt R22.7.1 '" >> package/base-files/files/etc/op
 # 补充配置文件最后一行结束语
 sed -i '$a uci commit' package/base-files/files/bin/config_generate
 
-# 默认开启Wifi、设定Wi-Fi名为GL-AXT1800、区域设为美国
-mv $WIFI_CONFIG_FILE $GITHUB_WORKSPACE/gl-infra-builder/wlan-ap/feeds/wifi-ax/mac80211/files/lib/wifi/mac80211.sh
-
 # 设定root密码为password
 sed -i '1d' package/base-files/files/etc/shadow
 sed -i '1i root:$1$H\/ab6bvd$yWkIzUrKuLPTNHY9akBDC0:18988:0:99999:7:::'  package/base-files/files/etc/shadow
