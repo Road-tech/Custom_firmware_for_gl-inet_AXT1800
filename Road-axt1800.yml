@@ -36,7 +36,6 @@ packages:
   - luci-app-frps
   - luci-app-tinyproxy
   - luci-app-ttyd
-  - ttyd
   - luci-app-uhttpd
   - luci-app-watchcat
   - luci-app-wireguard
