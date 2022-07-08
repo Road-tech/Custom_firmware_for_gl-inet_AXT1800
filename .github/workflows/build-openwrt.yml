@@ -78,8 +78,6 @@ jobs:
         chmod +x $DIY_P2_SH
         cd gl-infra-builder/wlan-ap/openwrt
         ./scripts/gen_config.py Road
-        echo 默认开启Wifi、设定Wi-Fi名为GL-AXT1800、区域设为美国
-        [ -e $WIFI_CONFIG_FILE ] && mv -f $WIFI_CONFIG_FILE $GITHUB_WORKSPACE/gl-infra-builder/wlan-ap/feeds/wifi-ax/mac80211/files/lib/wifi/mac80211.sh
         $GITHUB_WORKSPACE/$DIY_P2_SH
         
     - name: 添加glinet私有软件包（官方UI）
