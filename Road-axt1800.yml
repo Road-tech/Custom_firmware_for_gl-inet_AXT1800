@@ -28,7 +28,6 @@ packages:
   - luci-theme-argon
   - luci-app-openclash
   - luci-app-passwall
-  - luci-app-adguardhome
   - luci-app-advanced
   - luci-app-aliddns
   - luci-app-aria2
