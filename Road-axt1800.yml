@@ -2,8 +2,12 @@
 description: Add the LUCI application
 
 feeds:
-  - name: kiddin9
-    path: https://github.com/kiddin9/openwrt-packages.git
+  - name: kenzok8
+    uri: https://github.com/kenzok8/openwrt-packages.git
+    revision: 091936b4e454136a05b42b83c195963db87fc906
+  - name: small
+    uri: https://github.com/kenzok8/small.git
+    revision: 7025b3265b7aaef4195eb80e7ea4c110a1fbb0d5
 
 packages:
   - luci-app-adguardhome
