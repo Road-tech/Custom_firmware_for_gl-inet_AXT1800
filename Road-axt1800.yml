@@ -18,8 +18,29 @@ packages:
   - usb-modeswitch
   - luci-theme-argon
   - luci-app-openclash
+  - luci-app-ddns
+  - ddns-scripts_aliyun
+  - luci-app-commands
+  - luci-app-mwan3
+  - luci-app-eqos
+  - wireguard-tools
+  - kmod-usb3
+  - luci-app-passwall
+  - luci-app-advanced
+  - luci-app-aliddns
+  - luci-app-aria2
+  - luci-app-ddns
+  - luci-app-frpc
+  - luci-app-frps
+  - luci-app-tinyproxy
+  - luci-app-ttyd
+  - luci-app-uhttpd
+  - luci-app-watchcat
+  - luci-app-wireguard
+  - luci-app-wol
+  - kmod-usb-net-rndis
+  - usb-modeswitch
 
 diffconfig: |
   CONFIG_PACKAGE_dnsmasq=n
   CONFIG_PACKAGE_luci-i18n-adguardhome-zh-cn=y
-  CONFIG_PACKAGE_luci-theme-bootstrap=n
