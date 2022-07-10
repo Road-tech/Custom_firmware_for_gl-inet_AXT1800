@@ -23,8 +23,6 @@ cp -r $GITHUB_WORKSPACE/OpenClash/luci-app-openclash $GITHUB_WORKSPACE/gl-infra-
 git clone https://github.com/jerrykuku/luci-theme-argon.git $GITHUB_WORKSPACE/gl-infra-builder/feeds/glinet/luci-theme-argon
 sed -i '/luci-theme-bootstrap/d' $GITHUB_WORKSPACE/gl-infra-builder/profiles/glinet_depends.yml
 
-git clone https://github.com/Road-tech/my-openwrt-default-settings.git $GITHUB_WORKSPACE/gl-infra-builder/feeds/glinet/default-settings
-
 # pushd wlan-ap/openwrt
  
 # popd
