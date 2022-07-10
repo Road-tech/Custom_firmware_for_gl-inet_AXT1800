@@ -27,12 +27,12 @@ echo "uci set glfan.@globals[0].temperature='30'" >> package/base-files/files/bi
 sed -i 's/192.168.1.1/192.168.8.1/g' package/base-files/files/bin/config_generate
 
 # 设定主题luci-theme-argon
-# sed -i '/luci-theme-bootstrap/d' glinet_depends.yml $GITHUB_WORKSPACE/gl-infra-builder/wlan-ap/profiles/glinet_depends.yml
-# sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/Makefile
+sed -i '/luci-theme-bootstrap/d' glinet_depends.yml $GITHUB_WORKSPACE/gl-infra-builder/wlan-ap/profiles/glinet_depends.yml
+sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/Makefile
 
 # 修改主机名
 # echo "uci set system.cfg01e48a.hostname='GL-AXT1800'" >> package/base-files/files/bin/config_generate
-# sed -i 's/OpenWrt/AXT1800/' package/base-files/files/bin/config_generate
+sed -i 's/OpenWrt/GL-AXT1800/' package/base-files/files/bin/config_generate
 sed -i '/DISTRIB_REVISION/d' package/base-files/files/etc/openwrt_release
 echo "DISTRIB_REVISION='GL.iNet AXT1800'" >> package/base-files/files/etc/openwrt_release
 # sed -i '/DISTRIB_DESCRIPTION/d' package/base-files/files/etc/openwrt_release
