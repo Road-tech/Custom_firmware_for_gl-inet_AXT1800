@@ -77,7 +77,7 @@ jobs:
       run: |
         chmod +x $DIY_P2_SH
         cd gl-infra-builder/wlan-ap/openwrt
-        ./scripts/gen_config.py target_wlan_ap-gl-axt1800-5-4 luci
+        ./scripts/gen_config.py target_wlan_ap-gl-axt1800-5-4 luci Road
         $GITHUB_WORKSPACE/$DIY_P2_SH
         
     - name: 添加glinet私有软件包（官方UI）
