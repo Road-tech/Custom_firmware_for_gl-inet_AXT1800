@@ -2,10 +2,8 @@
 description: Add the LUCI application
 
 feeds:
-  - name: kenzok8
-    uri: https://github.com/kenzok8/openwrt-packages.git
-  - name: small
-    uri: https://github.com/kenzok8/small.git
+  - name: NueXini
+    path: ../feeds_dir/NueXini
 
 packages:
   - luci-app-adguardhome
@@ -14,7 +12,7 @@ packages:
   - luci-app-commands
   - kmod-usb-net-rndis
   - usb-modeswitch
-  - luci-theme-argon
+  - luci-theme-argon-2102
   - luci-app-openclash
   - luci-app-ddns
   - ddns-scripts_aliyun
@@ -36,9 +34,42 @@ packages:
   - luci-app-watchcat
   - luci-app-wireguard
   - luci-app-wol
-  - kmod-usb-net-rndis
-  - usb-modeswitch
+  - luci-app-aliyundrive-fuse
+  - luci-app-argon-config
+  - luci-app-cifs-mount
+  - luci-app-cifsd
+  - luci-app-ddnsto
+  - luci-app-mwan3helper
+  - luci-app-netspeedtest
+  - luci-app-softether
+  - luci-app-sqm
+  - luci-app-unblockmusic
+  - luci-app-usb-printer
+  - luci-app-uugamebooster
+  - luci-app-verysync
+  - luci-app-vlmcsd
+  - luci-app-wrtbwmon
+  - luci-app-zerotier
+
 
 diffconfig: |
   CONFIG_PACKAGE_dnsmasq=n
+  CONFIG_PACKAGE_ttyd=y
   CONFIG_PACKAGE_luci-i18n-adguardhome-zh-cn=y
+  CONFIG_PACKAGE_luci-i18n-aliyundrive-fuse-zh-cn=y
+  CONFIG_PACKAGE_luci-i18n-argon-config-zh-cn=y
+  CONFIG_PACKAGE_luci-i18n-aria2-zh-cn=y
+  CONFIG_PACKAGE_luci-i18n-base-zh-cn=y
+  CONFIG_PACKAGE_luci-i18n-ddnsto-zh-cn=y
+  CONFIG_PACKAGE_luci-i18n-firewall-zh-cn=y
+  CONFIG_PACKAGE_luci-i18n-frpc-zh-cn=y
+  CONFIG_PACKAGE_luci-i18n-frps-zh-cn=y
+  CONFIG_PACKAGE_luci-i18n-mwan3-zh-cn=y
+  CONFIG_PACKAGE_luci-i18n-opkg-zh-cn=y
+  CONFIG_PACKAGE_luci-i18n-passwall-zh-cn=y
+  CONFIG_PACKAGE_luci-i18n-sqm-zh-cn=y
+  CONFIG_PACKAGE_luci-i18n-tinyproxy-zh-cn=y
+  CONFIG_PACKAGE_luci-i18n-ttyd-zh-cn=y
+  CONFIG_PACKAGE_luci-i18n-watchcat-zh-cn=y
+  CONFIG_PACKAGE_luci-i18n-wol-zh-cn=y
+  CONFIG_PACKAGE_luci-i18n-wrtbwmon-zh-cn=y
