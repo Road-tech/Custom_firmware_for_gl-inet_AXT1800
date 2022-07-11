@@ -28,7 +28,7 @@ sed -i 's/192.168.1.1/192.168.8.1/g' package/base-files/files/bin/config_generat
 
 # 设定主题luci-theme-argon
 #sed -i '/luci-theme-bootstrap/d' glinet_depends.yml $GITHUB_WORKSPACE/gl-infra-builder/wlan-ap/profiles/glinet_depends.yml
-sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/Makefile
+sed -i 's/luci-theme-bootstrap/luci-theme-argon-2102/g' feeds/luci/collections/luci/Makefile
 sed -i 's/CONFIG_PACKAGE_luci-theme-bootstrap=y/# CONFIG_PACKAGE_luci-theme-bootstrap is not set/g' .config
 
 # 修改主机名
