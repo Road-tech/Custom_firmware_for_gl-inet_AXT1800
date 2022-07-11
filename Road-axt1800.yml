@@ -38,7 +38,6 @@ packages:
   - luci-app-wol
   - kmod-usb-net-rndis
   - usb-modeswitch
-  - luci-app-vlmcsd
 
 diffconfig: |
   CONFIG_PACKAGE_dnsmasq=n
