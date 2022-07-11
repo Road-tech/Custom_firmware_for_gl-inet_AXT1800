@@ -22,6 +22,9 @@ sed -i '$d' package/base-files/files/bin/config_generate
 
 # 设置风扇30度起转
 echo "uci set glfan.@globals[0].temperature='30'" >> package/base-files/files/bin/config_generate
+echo "uci set glfan.@globals[0].intergration='4'" >> package/base-files/files/bin/config_generate
+echo "uci set glfan.@globals[0].differential='20'" >> package/base-files/files/bin/config_generate
+echo "uci commit glfan" >> package/base-files/files/bin/config_generate
 
 # 设定内网默认ip为192.168.8.1
 sed -i 's/192.168.1.1/192.168.8.1/g' package/base-files/files/bin/config_generate
