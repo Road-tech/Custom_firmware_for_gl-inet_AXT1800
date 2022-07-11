@@ -20,6 +20,8 @@
 git clone https://github.com/vernesong/OpenClash.git $GITHUB_WORKSPACE/OpenClash
 cp -r $GITHUB_WORKSPACE/OpenClash/luci-app-openclash $GITHUB_WORKSPACE/gl-infra-builder/feeds/glinet/luci-app-openclash
 
+git clone https://github.com/mchome/luci-app-vlmcsd.git $GITHUB_WORKSPACE/gl-infra-builder/feeds/glinet/luci-app-vlmcsd
+
 #git clone https://github.com/jerrykuku/luci-theme-argon.git $GITHUB_WORKSPACE/gl-infra-builder/feeds/glinet/luci-theme-argon
 
 # pushd wlan-ap/openwrt
