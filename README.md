@@ -10,6 +10,8 @@ Gl-inet AXT1800 固件
 
 此固件基于[gl-inet](https://github.com/gl-inet)的官方开源仓库[gl-infra-builder](https://github.com/gl-inet/gl-infra-builder)，属openwrt 21.02，5.4内核。
 
+这个自动编译脚本的优势，相对别的而言，我是以官方的profiles追加自己的profiles的形式实现的，这样官方更新了profiles，加了什么应用我这边都能自动编译，不用修改。而有的大佬会把几个profiles整合成一个，这样官方更新了，还需要自己手动更新，就麻烦点了。当然利弊各位自己权衡。
+
 如果需要定制，可以自行fork修改，都有详细备注。
 
 ## Openwrt配置相关
