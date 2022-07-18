@@ -50,6 +50,7 @@ packages:
   - luci-app-vlmcsd
   - luci-app-wrtbwmon
   - luci-app-zerotier
+  - iptables-mod-fullconenat
 
 
 diffconfig: |
