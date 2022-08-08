@@ -70,7 +70,7 @@ jobs:
     - name: Download openwrt source code/拉取openwrt源码
       run: |
         cd gl-infra-builder
-        python3 setup.py -c config-wlan-ap-5.4.yml
+        python3 setup.py -c configs/config-wlan-ap-5.4.yml
 
     - name: Download feeds and Generate config file/拉取订阅文件并生成config文件
       id: package
